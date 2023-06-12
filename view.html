@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Blue Library Books</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #ffffff, #9dd4f7);
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #6fb5e0"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="view.html" style="font-weight: bold"
+          >Blue Library 📖</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="insert.html"
+                >Borrow Here</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br />
+    <br />
+    <h2 class="text-center" style="font-weight: bold">List of Books</h2>
+    <p class="text-center mt-2 pt-1 mb-3">
+      You may choose to borrow any of the books in the catalog below. Currently
+      borrowed books will be displayed in the table here.
+    </p>
+    <br />
+    <br />
+    <br />
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Book Title</th>
+            <th>Book Number</th>
+            <th>Borrowed By</th>
+            <th>Section</th>
+            <th>Student Number</th>
+          </tr>
+        </thead>
+        <tbody id="tbody1">
+          <!-- <tr>
+                       <td>2</td>
+                       <td>tacv</td>
+                       <td>10</td>
+                       <td>B</td>
+                       <td>male</td>
+                   </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+    <br />
+
+    <button
+      type="button"
+      id="login"
+      name="login"
+      class="btn btn-primary"
+      style="margin-top: 15px; display: block; margin: 0 auto"
+      onclick="redirectToInsert()"
+    >
+      Borrow Here
+    </button>
+
+    <br />
+    <br />
+
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="1.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">The Little Prince</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">
+          Antoine de Saint-Exupéry
+        </p>
+        <p style="margin: 5px; font-size: 16px; color: #333">TL101</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="2.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">Harry Potter</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">J.K. Rowling</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">HP102</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="3.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">To Kill a Mockingbird</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Harper Lee</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">TK201</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="4.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">Pride and Prejudice</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Jane Austen</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">PP103</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="5.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">The Alchemist</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Paulo Coelho</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">TA301</p>
+      </div>
+    </div>
+
+    <br />
+
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="6.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">The Great Gatsby</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">
+          F. Scott Fitzgerald
+        </p>
+        <p style="margin: 5px; font-size: 16px; color: #333">TG401</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="7.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">The Hunger Games</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Suzanne Collins</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">TH501</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="8.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">Coraline</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Neil Gaiman</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">CL104</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="9.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">Les Miserables</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Victor Hugo</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">LM105</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="10.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">13 Reasons Why</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Jay Asher</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">RW106</p>
+      </div>
+    </div>
+
+    <br />
+
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="11.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">Tuesdays With Morrie</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Mitch Albom</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">TW601</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="12.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">The Book Thief</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Markus Zusak</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">BT107</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="13.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">All the Bright Places</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Jennifer Niven</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">BP201</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="14.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">No Longer Human</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">Osamu Dazai</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">NL108</p>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 400px;
+          background-color: #fff;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 10px;
+        "
+      >
+        <img
+          src="15.jpg"
+          alt="Image 1"
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px 10px 0 0;
+          "
+        />
+        <h2 style="margin-top: 10px; font-size: 20px">Paper Towns</h2>
+        <p style="margin: 5px; font-size: 16px; color: #333">John Green</p>
+        <p style="margin: 5px; font-size: 16px; color: #333">PT202</p>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <!--Firebase Libraries-->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+    <!-- CONFIGURATION -->
+    <script id="MainScript">
+      var firebaseConfig = {
+        apiKey: "AIzaSyCpJVV4OPIkIfQso0BSPh65cypvNcAlQUM",
+        authDomain: "auth-b9c74.firebaseapp.com",
+        databaseURL: "https://auth-b9c74-default-rtdb.firebaseio.com",
+        projectId: "auth-b9c74",
+        storageBucket: "auth-b9c74.appspot.com",
+        messagingSenderId: "792826652850",
+        appId: "1:792826652850:web:ee7fc32c6bf41cecbb41ab",
+        measurementId: "G-LJXW2RPHP9",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Get all data
+      function SelectAllData() {
+        firebase
+          .database()
+          .ref("Borrowers")
+          .once("value", function (AllRecords) {
+            AllRecords.forEach(function (CurrentRecord) {
+              var namebox = CurrentRecord.val().Name;
+              var rollbox = CurrentRecord.val().StudentNo;
+              var sectionbox = CurrentRecord.val().Section;
+              var btitle = CurrentRecord.val().BookTitle;
+              var bnumber = CurrentRecord.val().BookNumber;
+
+              console.log(namebox, rollbox, sectionbox, btitle, bnumber); // Add this line to log the values
+
+              AddItemsToTable(namebox, rollbox, sectionbox, btitle, bnumber);
+            });
+          });
+      }
+      window.onload = SelectAllData;
+
+      // Filling the table
+      var stdNo = 0;
+      function AddItemsToTable(namebox, rollbox, sectionbox, btitle, bnumber) {
+        var tbody = document.getElementById("tbody1");
+        var trow = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+        var td5 = document.createElement("td");
+        var td6 = document.createElement("td");
+        td1.innerHTML = ++stdNo;
+        td2.innerHTML = btitle;
+        td3.innerHTML = bnumber;
+        td4.innerHTML = namebox;
+        td5.innerHTML = sectionbox;
+        td6.innerHTML = rollbox;
+
+        console.log(
+          td1.innerHTML,
+          td2.innerHTML,
+          td3.innerHTML,
+          td4.innerHTML,
+          td5.innerHTML,
+          td6.innerHTML
+        ); // Add this line to log the values
+
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        trow.appendChild(td6);
+        tbody.appendChild(trow);
+      }
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+    <script>
+      // Check the user's authentication state
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          console.log("User is signed in.");
+          document.getElementById("logout");
+        } else {
+          // No user is signed in.
+          console.log("No user is signed in.");
+          document.getElementById("logout");
+        }
+      });
+    </script>
+
+    <script>
+      //----- Logout code start
+      document.getElementById("logout").addEventListener("click", function () {
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            // Sign-out successful.
+            console.log("Logout successful!");
+            alert("Logout successful!");
+            document.getElementById("logout").style.display = "none";
+            window.location.href = "login.html"; // Redirect to login page
+          })
+          .catch((error) => {
+            // An error happened.
+            console.log("An error happened.");
+          });
+      });
+      //----- End
+    </script>
+
+    <script>
+      function redirectToInsert() {
+        window.location.href = "insert.html";
+      }
+    </script>
+  </body>
+</html>
